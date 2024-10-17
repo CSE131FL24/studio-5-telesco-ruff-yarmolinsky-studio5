@@ -17,9 +17,11 @@ public class Methods {
 		double distance = 0;
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
 		
-		return distance;
+		return Math.sqrt(Math.pow(x1 - x2, 2) + (Math.pow(y1 - y2, 2))); 
+		
 	}
 
+	
 	/**
 	 * Draw a bull's eye at the given location with the given radius.
 	 *
@@ -30,6 +32,20 @@ public class Methods {
 	public static void drawBullsEye(double x, double y, double radius) {
 		StdDraw.setPenColor(StdDraw.BLACK);
 		StdDraw.filledCircle(x, y, radius);
+		
+		StdDraw.setPenColor(StdDraw.BLUE);
+		StdDraw.filledCircle(x, y, (radius*0.75));
+		
+		StdDraw.setPenColor(StdDraw.RED);
+		StdDraw.filledCircle(x, y, (radius*0.5));
+		
+		StdDraw.setPenColor(StdDraw.YELLOW);
+		StdDraw.filledCircle(x, y, (radius*0.25));
+		
+		return;
+		
+		
+
 
 		// TODO: Draw the remaining rings of the bull's eye
 		// Blue ring with 3.0/4.0 the radius
@@ -74,7 +90,10 @@ public class Methods {
 	 */
 	public static int arraySum(int[] values) {
 		int sum = 0;
-		// FIXME: Compute the sum of the values in an array
+		
+		for(int i = 0; i < values.length; i++) {
+			sum += values[i];
+		}
 		
 		return sum;
 	}
@@ -86,8 +105,8 @@ public class Methods {
 	 * @param value  the value to fill the array with
 	 * @return and array of size that's filled with value
 	 */
-	public static int[] filledArray(int length, int value) {
-		int[] values = null; // FIXME: Create an array of the appropriate size
+	public static int[][] filledArray(int length, int value) {
+		int[][] values = new int[length][value]; // FIXME: Create an array of the appropriate size
 		// TODO: Finish this method
 
 		

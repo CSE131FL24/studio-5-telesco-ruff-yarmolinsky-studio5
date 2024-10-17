@@ -19,18 +19,23 @@ public class FilledArrayPreliminaryTest {
 	public void testArrayLength0() {
 		int length = 0;
 		int ignored = 16;
-		int[] actuals = Methods.filledArray(length, ignored);
+		int[][] actuals = Methods.filledArray(length, ignored);
 		assertNotNull(actuals);
 		assertEquals(length, actuals.length);
 		int[] expecteds = {};
 		assertArrayEquals(expecteds, actuals);
 	}
 
+	private void assertArrayEquals(int[] expecteds, int[][] actuals) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	@Test
 	public void testArrayLength1() {
 		int length = 1;
 		int value = 42;
-		int[] actuals = Methods.filledArray(length, value);
+		int[][] actuals = Methods.filledArray(length, value);
 		assertNotNull(actuals);
 		assertEquals(length, actuals.length);
 		int[] expecteds = { value };
@@ -41,9 +46,9 @@ public class FilledArrayPreliminaryTest {
 	public void testArrayLength2() {
 		int length = 2;
 		int value = 4;
-		int[] actuals = Methods.filledArray(length, value);
+		int[][] actuals = Methods.filledArray(length, value);
 		assertNotNull(actuals);
-		assertEquals(value, actuals.length); // Incorrect: FIXME!
+		assertEquals(length, actuals.length); // Incorrect: FIXME!
 		int[] expecteds = { value, value };
 		assertArrayEquals(expecteds, actuals);
 	}
@@ -52,7 +57,7 @@ public class FilledArrayPreliminaryTest {
 	public void testArrayLength4() {
 		int length = 4;
 		int value = 400;
-		int[] actuals = Methods.filledArray(length, value);
+		int[][] actuals = Methods.filledArray(length, value);
 		assertNotNull(actuals);
 		assertEquals(length, actuals.length);
 		int[] expecteds = { value, value, value, value };
